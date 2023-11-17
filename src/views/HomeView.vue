@@ -17,20 +17,28 @@ import Skeleton from "@/components/thumbnail/Skeleton.vue";
         Paulo.</p>
     </div>
 
-    <div class="mt-12 flex flex-row items-center justify-center flex-wrap gap-3">
 
-
+    <div v-if="isLoading" class="mt-12 flex flex-row items-center justify-center flex-wrap gap-3">
       <Skeleton/>
       <Skeleton/>
       <Skeleton/>
       <Skeleton/>
       <Skeleton/>
 
-<!--      <Thumbnail/>-->
-<!--      <Thumbnail/>-->
-<!--      <Thumbnail/>-->
-<!--      <Thumbnail/>-->
-<!--      <Thumbnail/>-->
+      <!--      <Thumbnail/>-->
+      <!--      <Thumbnail/>-->
+      <!--      <Thumbnail/>-->
+      <!--      <Thumbnail/>-->
+      <!--      <Thumbnail/>-->
+    </div>
+
+    <div v-else class="mt-12 flex flex-row items-center justify-center flex-wrap gap-3">
+
+            <Thumbnail/>
+            <Thumbnail/>
+            <Thumbnail/>
+            <Thumbnail/>
+            <Thumbnail/>
     </div>
 
     <hr class="h-px mt-12 bg-neutral-800 border-0">
@@ -44,14 +52,68 @@ import Skeleton from "@/components/thumbnail/Skeleton.vue";
           plantas de imóveis modernos e elegantes, projetados para refletir o luxo e o conforto que você merece.
           Descubra espaços inovadores e inspiradores para transformar seus sonhos de lar perfeito em realidade.</p>
       </div>
-      <div class="p-4 bg-amber-50 flex-1 rounded-lg text-neutral-700 flex flex-col gap-y-3 w-96 min-w-[22rem] max-w-[32rem] shadow-2xl mx-auto">
+      <div
+          class="p-4 bg-amber-50 flex-1 rounded-lg text-neutral-700 flex flex-col gap-y-3 w-96 min-w-[22rem] max-w-[32rem] shadow-2xl mx-auto">
         <h1 class="text-3xl font-medium max-w-sm text-center mx-auto">ENCONTRE SEU NOVO ESTILO DE VIDA</h1>
-        <p class="max-w-sm text-center mx-auto">Preencha o formulário abaixo para receber todas as informações sobre imóveis disponiveis</p>
-<!--        TODO: make form-->
+        <p class="max-w-sm text-center mx-auto">Preencha o formulário abaixo para receber todas as informações sobre
+          imóveis disponiveis</p>
+        <!--        TODO: make form-->
       </div>
     </div>
 
     <Footer/>
   </main>
 </template>
+
+<script>
+import gql from 'graphql-tag'
+
+const GET_HOUSES_THUMB = gql`
+  query Assets {
+    imoveis {
+      id
+      slug
+      metragem
+      zonaDoImovel
+      fotoCapa
+    }
+  }
+`
+
+export default {
+  data() {
+    return {
+      houseList: [],
+      isLoading: false,
+    }
+  },
+  created() {
+    const vm = this
+    vm.getHousesList({character: '@'})
+  },
+  methods: {
+    getHousesList(variables = {}) {
+
+      const vm = this
+      vm.isLoading = true
+
+      vm.$apolloProvider.defaultClient
+          .query({
+            query: GET_HOUSES_THUMB,
+            variables: {
+              ...variables
+            }
+          })
+          .then(result => {
+            vm.houseList = result.data.imoveis
+            console.log(vm.houseList)
+            vm.isLoading = result.data.loading
+          })
+          .catch(error => {
+            console.log(error)
+          })
+    }
+  }
+}
+</script>
 
