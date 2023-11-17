@@ -34,11 +34,8 @@ import Skeleton from "@/components/thumbnail/Skeleton.vue";
 
     <div v-else class="mt-12 flex flex-row items-center justify-center flex-wrap gap-3">
 
-            <Thumbnail/>
-            <Thumbnail/>
-            <Thumbnail/>
-            <Thumbnail/>
-            <Thumbnail/>
+            <Thumbnail v-for="house in houseList" :house="house"/>
+
     </div>
 
     <hr class="h-px mt-12 bg-neutral-800 border-0">
@@ -75,7 +72,7 @@ const GET_HOUSES_THUMB = gql`
       slug
       metragem
       zonaDoImovel
-      fotoCapa
+      thumbnailImage
     }
   }
 `
@@ -106,7 +103,6 @@ export default {
           })
           .then(result => {
             vm.houseList = result.data.imoveis
-            console.log(vm.houseList)
             vm.isLoading = result.data.loading
           })
           .catch(error => {

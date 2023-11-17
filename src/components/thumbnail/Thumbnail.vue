@@ -1,19 +1,34 @@
 <script setup>
-
+defineProps({
+  house: {
+    id: String,
+    slug: String,
+    metragem: String,
+    zonaDoImovel: String,
+    thumbnailImage: String
+  }
+})
+// min-w-[14rem] w-full max-w-sm h-48 bg-gray-600 bg-[url(https://erickcintra.sirv.com/thumbnails/-small.jpg')] bg-no-repeat bg-cover bg-center rounded-lg shadow-md overflow-hidden
 
 </script>
 
 <template>
   <div class="flex flex-col flex-1 gap-2 min-w-[20rem] max-w-sm">
-    <div class="min-w-[14rem] w-full max-w-sm h-48 bg-gray-600 bg-[url('../assets/1-small.jpg')] bg-no-repeat bg-cover bg-center rounded-lg shadow-md overflow-hidden">
-      <img class="w-full max-w-sm h-48 object-cover" v-show="isLoaded" @load="onImgLoad()" src="https://erickcintra.sirv.com/b1.webp"  alt="..." loading="lazy">
+    <div
+        class=" min-w-[14rem] w-full max-w-sm h-48 bg-gray-600 bg-no-repeat bg-cover bg-center rounded-lg shadow-md overflow-hidden">
+      <img class="w-full max-w-sm h-48 object-cover" v-show="showImg" @load="onImgLoad()"
+           :src="house.thumbnailImage"  alt="..." loading="lazy">
     </div>
     <div class="flex flex-row gap-3">
-      <p>name</p>
-      <span class="inline-flex items-center rounded-md bg-neutral-800 px-2 py-1 text-xs font-medium text-gray-400 ring-1 ring-inset ring-gray-500/10">Zona Sul</span>
+      <p>{{ house.slug }}</p>
+      <span
+          class="inline-flex items-center rounded-md bg-neutral-800 px-2 py-1 text-xs font-medium text-gray-400 ring-1 ring-inset ring-gray-500/10">{{
+          house.zonaDoImovel
+        }}</span>
     </div>
   </div>
 </template>
+
 
 <script>
 export default {
@@ -25,6 +40,11 @@ export default {
   methods: {
     onImgLoad() {
       return this.isLoaded = true
+    },
+  },
+  computed: {
+    showImg() {
+      return this.isLoaded
     }
   }
 }
