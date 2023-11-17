@@ -23,6 +23,8 @@ import Skeleton from "@/components/thumbnail/Skeleton.vue";
       <Skeleton/>
       <Skeleton/>
       <Skeleton/>
+      <Skeleton/>
+      <Skeleton/>
 
 <!--      <Thumbnail/>-->
 <!--      <Thumbnail/>-->
@@ -42,7 +44,7 @@ import Skeleton from "@/components/thumbnail/Skeleton.vue";
           plantas de imóveis modernos e elegantes, projetados para refletir o luxo e o conforto que você merece.
           Descubra espaços inovadores e inspiradores para transformar seus sonhos de lar perfeito em realidade.</p>
       </div>
-      <div class="p-4 bg-amber-50 flex-1 rounded-lg text-neutral-700 flex flex-col gap-y-3 w-96 max-w-[32rem] shadow-2xl">
+      <div class="p-4 bg-amber-50 flex-1 rounded-lg text-neutral-700 flex flex-col gap-y-3 w-96 min-w-[22rem] max-w-[32rem] shadow-2xl mx-auto">
         <h1 class="text-3xl font-medium max-w-sm text-center mx-auto">ENCONTRE SEU NOVO ESTILO DE VIDA</h1>
         <p class="max-w-sm text-center mx-auto">Preencha o formulário abaixo para receber todas as informações sobre imóveis disponiveis</p>
 <!--        TODO: make form-->
