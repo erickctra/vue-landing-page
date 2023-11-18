@@ -16,6 +16,7 @@ defineProps({
   <div class="flex flex-col flex-1 gap-2 min-w-[20rem] max-w-sm">
     <div
         class=" min-w-[14rem] w-full max-w-sm h-48 bg-gray-600 bg-no-repeat bg-cover bg-center rounded-lg shadow-md overflow-hidden">
+<!--      @load event does not work with img-->
       <img class="w-full max-w-sm h-48 object-cover" v-show="showImg" @load="onImgLoad()"
            :src="house.thumbnailImage"  alt="..." loading="lazy">
     </div>
@@ -44,7 +45,7 @@ export default {
   },
   computed: {
     showImg() {
-      return this.isLoaded
+      return this.isLoaded = true
     }
   }
 }
