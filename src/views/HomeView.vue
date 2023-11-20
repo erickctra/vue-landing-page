@@ -35,7 +35,7 @@ import LazyComponent from 'v-lazy-component'
     <hr class="h-px mt-12 bg-neutral-800 border-0">
 
     <div class="mt-12 flex flex-row flex-wrap gap-12">
-      <div class="flex flex-col gap-y-3 flex-1">
+      <div class="flex flex-col basis-[14rem] gap-y-3 flex-1">
         <sub class="text-sm">Eliana Dantas</sub>
         <h1 class="text-4xl text-white font-medium max-w-md">SUA PARCERIA DE CONFIANÇA NO MERCADO IMOBILIÁRIO!</h1>
         <p>CRECISP - 254502-F</p>
@@ -98,6 +98,7 @@ import LazyComponent from 'v-lazy-component'
     </div>
 
     <Footer/>
+
   </main>
 </template>
 
@@ -122,6 +123,7 @@ export default {
       isIntersected: false,
       houseList: [],
       isLoading: false,
+
     }
   },
   created() {
