@@ -8,34 +8,8 @@ import LazyComponent from 'v-lazy-component'
 
 <template>
   <main class="max-w-7xl p-8 pb-0 mx-auto">
-    <div class="flex flex-row items-end justify-between flex-wrap gap-y-3">
-      <div class="flex flex-col gap-y-3">
-        <sub class="text-sm">Eliana Dantas</sub>
-        <h1 class="text-3xl text-white font-medium max-w-sm">EMPREENDIMENTOS DISPONÍVEIS EM TODA SÃO PAULO:</h1>
-      </div>
-
-      <p class="max-w-sm">Encontre seu novo estilo de vida com Eliana Dantas, corretora de imóveis em toda São Paulo.
-        Eliana Dantas é uma corretora de imóveis experiente que pode ajudá-lo a encontrar a casa dos seus sonhos em São
-        Paulo.</p>
-    </div>
-    <div v-if="isLoading" class="mt-12 flex flex-row items-center justify-center flex-wrap gap-3">
-      <Skeleton/>
-      <Skeleton/>
-      <Skeleton/>
-      <Skeleton/>
-      <Skeleton/>
-    </div>
-
-    <div v-else class="mt-12 flex flex-row items-center justify-center flex-wrap gap-3">
-            <Thumbnail v-for="house in houseList" :house="house"/>
-<!--      <Skeleton v-for="house in houseList"/>-->
-<!--      <LazyLoaded v-for="house in houseList" />-->
-    </div>
-
-    <hr class="h-px mt-12 bg-neutral-800 border-0">
-
     <div class="mt-12 flex flex-row flex-wrap gap-12">
-      <div class="flex flex-col basis-[14rem] gap-y-3 flex-1">
+      <div class="flex flex-col basis-[14rem] pl-6 gap-y-3 flex-1">
         <sub class="text-sm">Eliana Dantas</sub>
         <h1 class="text-4xl text-white font-medium max-w-md">SUA PARCERIA DE CONFIANÇA NO MERCADO IMOBILIÁRIO!</h1>
         <p>CRECISP - 254502-F</p>
@@ -52,26 +26,36 @@ import LazyComponent from 'v-lazy-component'
 
           <label class="flex flex-col text-sm leading-6 text-neutral-700" for="name">
             Nome*
-            <input id="name" class="block w-full bg-transparent outline-0 h-[3.75rem] rounded-md border-0 py-1.5 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-emerald-900 sm:text-sm sm:leading-6"  type="text" name="name" placeholder="Digite seu Nome">
+            <input id="name"
+                   class="block w-full bg-transparent outline-0 h-[3.75rem] rounded-md border-0 py-1.5 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-emerald-900 sm:text-sm sm:leading-6"
+                   type="text" name="name" placeholder="Digite seu Nome">
           </label>
           <label class="flex flex-col text-sm leading-6 text-neutral-700" for="tel">
             Telefone*
-            <input id="tel" class="block w-full bg-transparent outline-0 h-[3.75rem] rounded-md border-0 py-1.5 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-emerald-900 sm:text-sm sm:leading-6"  type="text" name="tel" placeholder="Digite seu Telefone">
+            <input id="tel"
+                   class="block w-full bg-transparent outline-0 h-[3.75rem] rounded-md border-0 py-1.5 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-emerald-900 sm:text-sm sm:leading-6"
+                   type="text" name="tel" placeholder="Digite seu Telefone">
           </label>
           <label class="flex flex-col text-sm leading-6 text-neutral-700" for="whatsapp">
             Whatsapp*
-            <input id="whatsapp" class="block w-full bg-transparent outline-0 h-[3.75rem] rounded-md border-0 py-1.5 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-emerald-900 sm:text-sm sm:leading-6"  type="text" name="tel" placeholder="Digite seu WhatsApp">
+            <input id="whatsapp"
+                   class="block w-full bg-transparent outline-0 h-[3.75rem] rounded-md border-0 py-1.5 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-emerald-900 sm:text-sm sm:leading-6"
+                   type="text" name="tel" placeholder="Digite seu WhatsApp">
           </label>
 
           <div class="flex flex-row flex-wrap gap-3">
             <label class="flex flex-col flex-1 basis-44 text-sm leading-6 text-neutral-700 " for="rooms">
               Quantidade de Quartos*
-              <input id="rooms" class="block w-full bg-transparent outline-0 h-[3.75rem] rounded-md border-0 py-1.5 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-emerald-900 sm:text-sm sm:leading-6" min="1" type="number" name="whatsapp" placeholder="2 dorms">
+              <input id="rooms"
+                     class="block w-full bg-transparent outline-0 h-[3.75rem] rounded-md border-0 py-1.5 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-emerald-900 sm:text-sm sm:leading-6"
+                     min="1" type="number" name="whatsapp" placeholder="2 dorms">
             </label>
 
             <label class="flex flex-col flex-1 basis-44 text-sm leading-6 text-neutral-700" for="whatsapp">
               Zona*
-              <select class="block w-full bg-transparent outline-0 h-[3.75rem] rounded-md border-0 py-1.5 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-emerald-900 sm:text-sm sm:leading-6" name="" id="">
+              <select
+                  class="block w-full bg-transparent outline-0 h-[3.75rem] rounded-md border-0 py-1.5 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-emerald-900 sm:text-sm sm:leading-6"
+                  name="" id="">
                 <option value="">Zona Norte</option>
                 <option value="">Zona Leste</option>
                 <option value="">Zona Sul</option>
@@ -82,21 +66,54 @@ import LazyComponent from 'v-lazy-component'
 
           <div class="flex flex-row gap-3 mt-2">
             <div class="flex items-center gap-x-3">
-              <input id="push-everything" name="push-notifications" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+              <input id="push-everything" name="push-notifications" type="radio"
+                     class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
               <label for="push-everything" class="block text-sm leading-6 text-gray-900">Sem Garagem</label>
             </div>
             <div class="flex items-center gap-x-3">
-              <input id="push-email" name="push-notifications" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+              <input id="push-email" name="push-notifications" type="radio"
+                     class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
               <label for="push-email" class="block text-sm leading-6 text-gray-900">Com Garagem</label>
             </div>
           </div>
           <hr class="h-px my-2 bg-gray-300 border-0">
-          <p class="text-sm">Ao completar o formulário, você está concordando em ser contatado exclusivamente por Eliana Dantas, atuando pelo CRECISP - 254502-F para discutir nosso produto. Valorizamos sua privacidade e usaremos suas informações apenas para fornecer informações relevantes sobre nossos produtos e serviços, adaptados às suas necessidades.</p>
-          <button type="button" class="text-white mt-2 w-full h-[3.75rem] bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5  dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Receber mais informações</button>
+          <p class="text-sm">Ao completar o formulário, você está concordando em ser contatado exclusivamente por Eliana
+            Dantas, atuando pelo CRECISP - 254502-F para discutir nosso produto. Valorizamos sua privacidade e usaremos
+            suas informações apenas para fornecer informações relevantes sobre nossos produtos e serviços, adaptados às
+            suas necessidades.</p>
+          <button type="button"
+                  class="text-white mt-2 w-full h-[3.75rem] bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5  dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+            Receber mais informações
+          </button>
         </form>
       </div>
     </div>
+    <hr class="h-px my-12 bg-neutral-500 border-0">
+    <div class="flex flex-row items-end justify-between flex-wrap gap-y-3">
+      <div class="flex flex-col gap-y-3">
+        <sub class="text-sm">Eliana Dantas</sub>
+        <h1 class="text-3xl text-white font-medium max-w-sm">EMPREENDIMENTOS DISPONÍVEIS EM TODA SÃO PAULO:</h1>
+      </div>
 
+      <p class="max-w-sm">Encontre seu novo estilo de vida com Eliana Dantas, corretora de imóveis em toda São Paulo.
+        Eliana Dantas é uma corretora de imóveis experiente que pode ajudá-lo a encontrar a casa dos seus sonhos em São
+        Paulo.</p>
+    </div>
+    <div v-if="isLoading" class="mt-12 flex flex-row items-center justify-center flex-wrap gap-3">
+      <Skeleton/>
+      <Skeleton/>
+      <Skeleton/>
+      <Skeleton/>
+      <Skeleton/>
+      <Skeleton/>
+      <Skeleton/>
+    </div>
+
+    <div v-else class="mt-12 flex flex-row items-center justify-center flex-wrap gap-3">
+      <Thumbnail v-for="house in houseList" :house="house"/>
+      <!--      <Skeleton v-for="house in houseList"/>-->
+      <!--      <LazyLoaded v-for="house in houseList" />-->
+    </div>
     <Footer/>
 
   </main>

@@ -16,18 +16,18 @@ defineProps({
 </script>
 
 <template>
-  <lazy-component class="flex flex-1 max-w-sm basis-[18rem]" wrapper-tag="section" @intersected="onImgLoad">
-    <div v-show="isLoaded" class="flex flex-col flex-1 gap-2 ">
+  <lazy-component class="flex flex-1 max-w-sm basis-[18rem]" wrapper-tag="section" @intersected="Intersect">
+    <div class="flex flex-col flex-1 gap-2 ">
       <div
           class=" w-full h-48 bg-gray-600 bg-no-repeat bg-cover bg-center rounded-lg shadow-md overflow-hidden">
         <!--      @load event does not work with img-->
-        <img class="w-full h-48 object-cover" v-show="isLoaded"
+        <img class="w-full h-48 object-cover" v-show="isLoaded" decoding="async"
              :src="house.thumbnailImage"  alt="...">
       </div>
-      <div class="flex flex-row gap-3">
+      <div class="flex flex-row gap-3 text-gray-200">
         <p>{{ house.slug }}</p>
         <span
-            class="inline-flex items-center rounded-md bg-neutral-800 px-2 py-1 text-xs font-medium text-gray-400 ring-1 ring-inset ring-gray-500/10">{{
+            class="inline-flex items-center rounded-md bg-neutral-400 bg-opacity-10 px-2 py-1 text-xs font-medium text-gray-200 ring-1 ring-inset ring-gray-500/10">{{
             house.zonaDoImovel
           }}</span>
       </div>
@@ -46,21 +46,13 @@ export default {
   data() {
     return {
       isLoaded: false,
-      isLoading: false,
-
     }
   },
   methods: {
-    onImgLoad() {
-      console.log('evento disparado')
+    Intersect() {
+      console.log(this.house.slug)
       return this.isLoaded = true
     },
-  },
-  computed: {
-    show() {
-      console.log('evento disparado')
-      return this.isLoaded = true
-    }
   }
 }
 </script>
