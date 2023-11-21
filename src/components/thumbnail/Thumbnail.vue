@@ -50,7 +50,6 @@ export default {
   },
   methods: {
     Intersect() {
-      console.log(this.house.slug)
       return this.isLoaded = true
     },
   }

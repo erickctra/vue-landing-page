@@ -4,7 +4,7 @@
 
 <template>
   <div
-      class="p-4 bg-white flex-1 rounded-lg text-neutral-700 flex flex-col gap-y-3 w-full basis-[22rem] max-w-[32rem] shadow-2xl mx-auto">
+      class="p-4 bg-white flex-1 rounded-lg text-neutral-700 flex flex-col gap-y-3 w-full basis-[22rem]  shadow-2xl">
     <h1 class="text-3xl font-medium max-w-sm text-center mx-auto">ENCONTRE SEU NOVO ESTILO DE VIDA</h1>
     <p class="max-w-sm text-center mx-auto">Preencha o formulário abaixo para receber todas as informações sobre
       imóveis disponiveis</p>
@@ -79,7 +79,6 @@
     </button>
   </div>
 </template>
-
 <style scoped>
 
 </style>

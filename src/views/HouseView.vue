@@ -1,15 +1,26 @@
+<script setup>
+import Footer from "@/components/Footer.vue";
+import logo from "@/assets/logo.png";
+import Faq from "@/components/Faq.vue";
+import Form from "@/components/Form.vue";
+import LazyImage from "@/components/LazyImage.vue";
+
+
+</script>
+
 <template>
   <main class="max-w-7xl p-8 pb-0 mx-auto main">
 
 
     <div class="mt-12 flex flex-row flex-wrap gap-8 ">
-      <div class="flex flex-col gap-y-3 flex-1 pl-6">
-        <sub class="text-sm">Eliana Dantas</sub>
-        <h1 class="text-4xl text-white font-medium max-w-md">SUA PARCERIA DE CONFIANÇA NO MERCADO IMOBILIÁRIO!</h1>
+      <div class="flex flex-col gap-y-3 basis-[260px] flex-1 pl-6">
+        <div v-if="isLoading" class="h-[40px] w-full bg-neutral-400 opacity-10 animate-pulse"></div>
+        <sub v-else class="text-sm">{{ houseData.imovel.zonaDoImovel }}</sub>
+        <div v-if="isLoading" class="h-[120px] w-full bg-neutral-400 opacity-10 animate-pulse"></div>
+        <h1 v-else class="text-4xl text-white font-medium max-w-md uppercase">{{houseData.imovel.headline}}</h1>
         <p>CRECISP - 254502-F</p>
-        <p class="max-w-sm">Explore a sofisticação da arquitetura contemporânea em nosso site, onde você encontrará
-          plantas de imóveis modernos e elegantes, projetados para refletir o luxo e o conforto que você merece.
-          Descubra espaços inovadores e inspiradores para transformar seus sonhos de lar perfeito em realidade.</p>
+        <div v-if="isLoading" class="h-[220px] w-full bg-neutral-400 opacity-10 animate-pulse"></div>
+        <p v-else class="max-w-sm">{{houseData.imovel.descricao}}</p>
       </div>
       <Form/>
     </div>
@@ -28,8 +39,10 @@
 
         <div class="mx-auto min-h-[200px] flex-1 flex flex-col justify-around basis-80 max-w-[300px]">
           <div class="mx-auto">
-            <div class="row text-2xl font-medium text-neutral-800">147m² a 194m²</div>
-            <div class="row text-2xl font-medium text-neutral-800">2 a 6 quartos</div>
+            <div v-if="isLoading" class="h-[120px] w-full bg-neutral-400 opacity-10 animate-pulse"></div>
+            <div v-else class="row text-2xl font-medium text-neutral-800">{{houseData.imovel.metragem}}</div>
+            <div v-if="isLoading" class="h-[120px] w-full bg-neutral-400 opacity-10 animate-pulse"></div>
+            <div v-else class="row text-2xl font-medium text-neutral-800">{{houseData.imovel.quartos }}</div>
           </div>
 
           <div class="flex flex-row flex-wrap justify-center gap-3">
@@ -42,7 +55,7 @@
         </div>
       </div>
 
-      <div class="bg-white min-h-[22rem] flex-1 basis-[36rem] m-4 rounded-md shadow-2xl"></div>
+      <LazyImage :url="houseData.imovel.localizacao"/>
     </div>
 
     <!--    heading-->
@@ -165,11 +178,13 @@
     <!--    heading-->
     <div class="flex flex-row flex-wrap justify-between mt-10 gap-3">
       <h1 class="text-3xl max-w-xs font-medium text-white uppercase">Plantas <br> disponíveis:</h1>
-      <p class="max-w-md">As plantas do imóvel exibem uma qualidade excepcional, integrando-se de forma elegante ao design, proporcionando não apenas beleza, mas também um conforto visual notável. Cada detalhe verde foi cuidadosamente escolhido, conferindo ao espaço uma atmosfera acolhedora e harmoniosa.</p>
+      <p class="max-w-md">As plantas do imóvel exibem uma qualidade excepcional, integrando-se de forma elegante ao
+        design, proporcionando não apenas beleza, mas também um conforto visual notável. Cada detalhe verde foi
+        cuidadosamente escolhido, conferindo ao espaço uma atmosfera acolhedora e harmoniosa.</p>
     </div>
 
 
-<!--    plantas-->
+    <!--    plantas-->
     <div class="mt-10 flex flex-col gap-3">
       <div class="flex-1 min-h-[400px] collection-big bg-neutral-300 rounded-md shadow-2xl ring-1 ring-neutral-200">
 
@@ -185,10 +200,22 @@
     <!--    heading-->
     <div class="flex flex-row flex-wrap justify-between mt-10 gap-3">
       <h1 class="text-3xl max-w-xs font-medium text-white uppercase">PREDIO REPLETO DE CONFORTO E AREAS DE LAZER</h1>
-      <p class="max-w-md">O condomínio destaca-se pela qualidade excepcional, oferecendo um conforto inigualável. Suas áreas de lazer são verdadeiros oásis de entretenimento, proporcionando momentos de relaxamento e diversão para todos os moradores.</p>
+      <p class="max-w-md">O condomínio destaca-se pela qualidade excepcional, oferecendo um conforto inigualável. Suas
+        áreas de lazer são verdadeiros oásis de entretenimento, proporcionando momentos de relaxamento e diversão para
+        todos os moradores.</p>
     </div>
-
     <!--    <Faq/>-->
+    <div class="mt-10 flex flex-col gap-3">
+      <div class="flex-1 min-h-[400px] collection-big bg-neutral-300 rounded-md shadow-2xl ring-1 ring-neutral-200">
+
+      </div>
+      <div class="flex-1 min-h-[400px] collection-big bg-neutral-300 rounded-md shadow-2xl ring-1 ring-neutral-200">
+
+      </div>
+      <div class="flex-1 min-h-[400px] collection-big bg-neutral-300 rounded-md shadow-2xl ring-1 ring-neutral-200">
+
+      </div>
+    </div>
 
     <Footer/>
   </main>
@@ -202,10 +229,86 @@
 }
 </style>
 
-<script setup>
+<script>
+import gql from 'graphql-tag'
 
-import Footer from "@/components/Footer.vue";
-import logo from "@/assets/logo.png";
-import Faq from "@/components/Faq.vue";
-import Form from "@/components/Form.vue";
+export default {
+  data() {
+    return {
+      isIntersected: false,
+      QUERY: null,
+      houseData: {},
+      isLoading: false,
+    }
+  },
+  created() {
+
+
+    this.QUERY = gql`
+        query Imoveis {
+          imovel(where: {slug: "${this.$route.params.slug}"}) {
+            academia
+            areaLazer
+            collectionOne
+            demaisFotos
+            descricao
+            descricao2
+            metragem
+            foto1
+            foto2
+            foto3
+            fotoCapa
+            garagem
+            headline
+            headline2
+            imovelNaPlanta
+            localizacao
+            planta
+            quartos
+            slug
+            tema
+            tituloImovel
+            zonaDoImovel
+            imovelDescricao {
+              ... on ImovelDescricao {
+                id
+                metragem
+                quartos
+                stage
+                vagas
+              }
+            }
+          }
+        }
+      `
+
+    const vm = this;
+    vm.getHouseData({character: '@'})
+  },
+  methods: {
+    getHouseData(variables = {}) {
+      const vm = this
+      vm.isLoading = true
+
+      vm.$apolloProvider.defaultClient
+          .query({
+            query: vm.QUERY,
+            variables: {
+              ...variables
+            }
+          })
+          .then(result => {
+
+
+            vm.houseData = result.data;
+            console.log(vm.houseData.imovel)
+            console.log(result)
+            vm.isLoading = result.data.loading;
+          })
+          .catch(error => {
+            console.log(error)
+          })
+    }
+  }
+}
 </script>
