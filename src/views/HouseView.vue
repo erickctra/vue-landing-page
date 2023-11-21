@@ -117,9 +117,9 @@
     <div class="flex justify-center mx-auto w-full h-full">
       <a
           target="_blank"
-        class="inline-block w-auto my-10 mx-auto self-center py-2 px-6 ring-1 shadow-2xl ring-neutral-400 font-medium bg-white text-neutral-800 rounded-full hover:bg-neutral-200"
-        href="">Conheça
-      Imovel</a>
+          class="inline-block w-auto my-10 mx-auto self-center py-2 px-6 ring-1 shadow-2xl ring-neutral-400 font-medium bg-white text-neutral-800 rounded-full hover:bg-neutral-200"
+          href="">Conheça
+        Imovel</a>
     </div>
 
     <!--    heading-->
@@ -130,30 +130,64 @@
         lar dos sonhos começa aqui.</p>
     </div>
 
-<!--    location-->
-      <div class="flex flex-row mt-20 flex-wrap gap-6 px-4">
-        <div class="flex flex-col basis-44 flex-1 gap-2">
-          <div class="w-12 h-12 bg-neutral-300 rounded-full flex items-center justify-center">icon</div>
-          <div class="max-w-md">
-            <h2 class="text-xl font-medium text-white">ACESSIBILIDADE A TRANSPORTE E POSTOS DE GASOLINA</h2>
-            <p>Este imóvel oferece fácil acesso ao transporte público, economizando tempo e dinheiro em deslocamentos.</p>
-          </div>
-        </div>
-        <div class="flex flex-col basis-44 flex-1 gap-2">
-          <div class="w-12 h-12 bg-neutral-300 rounded-full flex items-center justify-center">icon</div>
-          <div class="max-w-md">
-            <h2 class="text-xl font-medium text-white">PROXIMIDADE A SERVIÇOS E COMODIDADES</h2>
-            <p>Localizado perto de supermercados, escolas e hospitais, tornando a vida mais conveniente.</p>
-          </div>
-        </div>
-        <div class="flex flex-col basis-44 flex-1 gap-2">
-          <div class="w-12 h-12 bg-neutral-300 rounded-full flex items-center justify-center">icon</div>
-          <div class="max-w-md">
-            <h2 class="text-xl font-medium text-white">VALORIZAÇÃO DO IMÓVEL</h2>
-            <p>Uma localização privilegiada pode aumentar o valor da propriedade com o tempo, fazendo dela um sólido investimento.</p>
-          </div>
+    <!--    location-->
+    <div class="flex flex-row mt-20 flex-wrap gap-6 px-4">
+      <div class="flex flex-col basis-44 flex-1 gap-2">
+        <div class="w-12 h-12 bg-neutral-300 rounded-full flex items-center justify-center">icon</div>
+        <div class="max-w-md">
+          <h2 class="text-xl font-medium text-white">ACESSIBILIDADE A TRANSPORTE E POSTOS DE GASOLINA</h2>
+          <p>Este imóvel oferece fácil acesso ao transporte público, economizando tempo e dinheiro em deslocamentos.</p>
         </div>
       </div>
+      <div class="flex flex-col basis-44 flex-1 gap-2">
+        <div class="w-12 h-12 bg-neutral-300 rounded-full flex items-center justify-center">icon</div>
+        <div class="max-w-md">
+          <h2 class="text-xl font-medium text-white">PROXIMIDADE A SERVIÇOS E COMODIDADES</h2>
+          <p>Localizado perto de supermercados, escolas e hospitais, tornando a vida mais conveniente.</p>
+        </div>
+      </div>
+      <div class="flex flex-col basis-44 flex-1 gap-2">
+        <div class="w-12 h-12 bg-neutral-300 rounded-full flex items-center justify-center">icon</div>
+        <div class="max-w-md">
+          <h2 class="text-xl font-medium text-white">VALORIZAÇÃO DO IMÓVEL</h2>
+          <p>Uma localização privilegiada pode aumentar o valor da propriedade com o tempo, fazendo dela um sólido
+            investimento.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-10">
+      <div class="flex-1 min-h-[400px] collection-big bg-neutral-300 rounded-md shadow-2xl ring-1 ring-neutral-200">
+
+      </div>
+    </div>
+
+    <!--    heading-->
+    <div class="flex flex-row flex-wrap justify-between mt-10 gap-3">
+      <h1 class="text-3xl max-w-xs font-medium text-white uppercase">Plantas <br> disponíveis:</h1>
+      <p class="max-w-md">As plantas do imóvel exibem uma qualidade excepcional, integrando-se de forma elegante ao design, proporcionando não apenas beleza, mas também um conforto visual notável. Cada detalhe verde foi cuidadosamente escolhido, conferindo ao espaço uma atmosfera acolhedora e harmoniosa.</p>
+    </div>
+
+
+<!--    plantas-->
+    <div class="mt-10 flex flex-col gap-3">
+      <div class="flex-1 min-h-[400px] collection-big bg-neutral-300 rounded-md shadow-2xl ring-1 ring-neutral-200">
+
+      </div>
+      <div class="flex-1 min-h-[400px] collection-big bg-neutral-300 rounded-md shadow-2xl ring-1 ring-neutral-200">
+
+      </div>
+      <div class="flex-1 min-h-[400px] collection-big bg-neutral-300 rounded-md shadow-2xl ring-1 ring-neutral-200">
+
+      </div>
+    </div>
+
+    <!--    heading-->
+    <div class="flex flex-row flex-wrap justify-between mt-10 gap-3">
+      <h1 class="text-3xl max-w-xs font-medium text-white uppercase">PREDIO REPLETO DE CONFORTO E AREAS DE LAZER</h1>
+      <p class="max-w-md">O condomínio destaca-se pela qualidade excepcional, oferecendo um conforto inigualável. Suas áreas de lazer são verdadeiros oásis de entretenimento, proporcionando momentos de relaxamento e diversão para todos os moradores.</p>
+    </div>
+
     <!--    <Faq/>-->
 
     <Footer/>
