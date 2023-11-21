@@ -11,88 +11,15 @@
           plantas de imóveis modernos e elegantes, projetados para refletir o luxo e o conforto que você merece.
           Descubra espaços inovadores e inspiradores para transformar seus sonhos de lar perfeito em realidade.</p>
       </div>
-      <div
-          class="p-4 bg-white flex-1 rounded-lg text-neutral-700 flex flex-col gap-y-3 w-full basis-[22rem] max-w-[32rem] shadow-2xl mx-auto">
-        <h1 class="text-3xl font-medium max-w-sm text-center mx-auto">ENCONTRE SEU NOVO ESTILO DE VIDA</h1>
-        <p class="max-w-sm text-center mx-auto">Preencha o formulário abaixo para receber todas as informações sobre
-          imóveis disponiveis</p>
-        <form action="#">
-
-          <label class="flex flex-col text-sm leading-6 text-neutral-700" for="name">
-            Nome*
-            <input id="name"
-                   class="block w-full bg-transparent outline-0 h-[3.75rem] rounded-md border-0 py-1.5 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-emerald-900 sm:text-sm sm:leading-6"
-                   type="text" name="name" placeholder="Digite seu Nome">
-          </label>
-          <label class="flex flex-col text-sm leading-6 text-neutral-700" for="tel">
-            Telefone*
-            <input id="tel"
-                   class="block w-full bg-transparent outline-0 h-[3.75rem] rounded-md border-0 py-1.5 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-emerald-900 sm:text-sm sm:leading-6"
-                   type="text" name="tel" placeholder="Digite seu Telefone">
-          </label>
-          <label class="flex flex-col text-sm leading-6 text-neutral-700" for="whatsapp">
-            Whatsapp*
-            <input id="whatsapp"
-                   class="block w-full bg-transparent outline-0 h-[3.75rem] rounded-md border-0 py-1.5 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-emerald-900 sm:text-sm sm:leading-6"
-                   type="text" name="tel" placeholder="Digite seu WhatsApp">
-          </label>
-
-          <div class="flex flex-row flex-wrap gap-3">
-            <label class="flex flex-col flex-1 basis-44 text-sm leading-6 text-neutral-700 " for="rooms">
-              Quantidade de Quartos*
-              <input id="rooms"
-                     class="block w-full bg-transparent outline-0 h-[3.75rem] rounded-md border-0 py-1.5 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-emerald-900 sm:text-sm sm:leading-6"
-                     min="1" type="number" name="whatsapp" placeholder="2 dorms">
-            </label>
-
-            <label class="flex flex-col flex-1 basis-44 text-sm leading-6 text-neutral-700" for="whatsapp">
-              Zona*
-              <select
-                  class="block w-full bg-transparent outline-0 h-[3.75rem] rounded-md border-0 py-1.5 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-emerald-900 sm:text-sm sm:leading-6"
-                  name="" id="">
-                <option value="">Zona Norte</option>
-                <option value="">Zona Leste</option>
-                <option value="">Zona Sul</option>
-                <option value="">Zona Oeste</option>
-              </select>
-            </label>
-          </div>
-
-          <div class="flex flex-row gap-3 mt-2">
-            <div class="flex items-center gap-x-3">
-              <input id="push-everything" name="push-notifications" type="radio"
-                     class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
-              <label for="push-everything" class="block text-sm leading-6 text-gray-900">Sem Garagem</label>
-            </div>
-            <div class="flex items-center gap-x-3">
-              <input id="push-email" name="push-notifications" type="radio"
-                     class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
-              <label for="push-email" class="block text-sm leading-6 text-gray-900">Com Garagem</label>
-            </div>
-          </div>
-          <hr class="h-px my-2 bg-gray-300 border-0">
-          <p class="text-sm">Ao completar o formulário, você está concordando em ser contatado exclusivamente por Eliana
-            Dantas, atuando pelo CRECISP - 254502-F para discutir nosso produto. Valorizamos sua privacidade e usaremos
-            suas informações apenas para fornecer informações relevantes sobre nossos produtos e serviços, adaptados às
-            suas necessidades.</p>
-          <button type="button"
-                  class="text-white mt-2 w-full h-[3.75rem] bg-neutral-800 hover:bg-neutral-900 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5  dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
-            Receber mais informações
-          </button>
-        </form>
-        <small class="mx-auto">ou</small>
-        <button type="button"
-                class="text-[#1A1C18] w-full h-16 py-2 px-6 bg-[#9CD67D] hover:bg-[#80A86A] focus:ring-4 focus:ring-[#B8E2A1] font-medium rounded-lg text-sm">
-          Contato por WhatsApp
-        </button>
-      </div>
+      <Form/>
     </div>
 
-    <img class="my-10 mix-blend-overlay mx-auto text-center" width="140" height="60" loading="lazy" :src="logo" alt="...">
+    <img class="my-10 mix-blend-overlay mx-auto text-center" width="140" height="60" loading="lazy" :src="logo"
+         alt="...">
 
     <div class="min-h-[22rem] w-full bg-white rounded-md flex flex-row flex-wrap gap-3 shadow-2xl overflow-hidden">
       <div class="flex flex-row flex-wrap justify-between p-4 flex-1 basis-[20rem] ">
-        <div class="max-w-sm">
+        <div class="max-w-sm flex flex-col gap-3">
           <sub class="text-sm text-neutral-600">Eliana Dantas</sub>
           <h1 class="text-3xl text-neutral-800 font-medium max-w-md uppercase">Seu próximo capítulo começa aqui.</h1>
           <p class="text-neutral-600">"Nossos imóveis oferecem o conforto que você merece, independentemente do espaço
@@ -106,7 +33,8 @@
           </div>
 
           <div class="flex flex-row flex-wrap justify-center gap-3">
-            <a class="py-2 px-6 ring-1 shadow-2xl ring-neutral-400 font-medium bg-neutral-800 text-white rounded-full hover:bg-neutral-900" href="">Conheça
+            <a class="py-2 px-6 ring-1 shadow-2xl ring-neutral-400 font-medium bg-neutral-800 text-white rounded-full hover:bg-neutral-900"
+               href="">Conheça
               Imovel</a>
             <a class="py-2 px-6 font-medium underline underline-offset-8 text-neutral-950" href="">Ligar para um
               Especialista</a>
@@ -117,29 +45,99 @@
       <div class="bg-white min-h-[22rem] flex-1 basis-[36rem] m-4 rounded-md shadow-2xl"></div>
     </div>
 
-<!--    heading-->
+    <!--    heading-->
     <div class="flex flex-row mt-10 flex-wrap justify-between gap-3">
       <h1 class="text-3xl max-w-xs font-medium text-white">MODERNIDADE E ACONCHEGO EM PERFEITA SINTONIA.</h1>
-      <p class="max-w-md">Com ambientes espaçosos e acabamentos de alta qualidade, esta residência redefine o padrão de luxo. Desfrute de uma vida sofisticada em cada detalhe, onde o conforto se encontra com o design refinado. Seu lar dos sonhos começa aqui.</p>
+      <p class="max-w-md">Com ambientes espaçosos e acabamentos de alta qualidade, esta residência redefine o padrão de
+        luxo. Desfrute de uma vida sofisticada em cada detalhe, onde o conforto se encontra com o design refinado. Seu
+        lar dos sonhos começa aqui.</p>
     </div>
-
+    <!--photo collection-->
     <div class="mt-10">
-      <div class="flex-1 min-h-[400px] collection-big bg-neutral-300 rounded-md shadow-2xl ring-1 ring-neutral-200"></div>
+      <div class="flex-1 min-h-[400px] collection-big bg-neutral-300 rounded-md shadow-2xl ring-1 ring-neutral-200">
+
+      </div>
       <div class="flex flex-row flex-wrap gap-3 mt-3">
-        <div class="flex-1 basis-[18.75rem] min-h-[200px] bg-neutral-300 rounded-md shadow-2xl ring-1 ring-neutral-200"></div>
-        <div class="flex-1 basis-[18.75rem] min-h-[200px] bg-neutral-300 rounded-md shadow-2xl ring-1 ring-neutral-200"></div>
-        <div class="flex-1 basis-[18.75rem] min-h-[200px] bg-neutral-300 rounded-md shadow-2xl ring-1 ring-neutral-200"></div>
+        <div
+            class="flex-1 basis-[18.75rem] min-h-[200px] bg-neutral-300 rounded-md shadow-2xl ring-1 ring-neutral-200"></div>
+        <div
+            class="flex-1 basis-[18.75rem] min-h-[200px] bg-neutral-300 rounded-md shadow-2xl ring-1 ring-neutral-200"></div>
+        <div
+            class="flex-1 basis-[18.75rem] min-h-[200px] bg-neutral-300 rounded-md shadow-2xl ring-1 ring-neutral-200"></div>
       </div>
     </div>
 
-<!--    <Faq/>-->
+    <img class="my-10 mix-blend-overlay mx-auto text-center" width="140" height="60" loading="lazy" :src="logo"
+         alt="...">
+
+    <!--    house info-->
+    <div class="bg-white p-4 rounded-md shadow-2xl flex flex-row flex-wrap justify-between">
+      <div class="flex flex-col gap-3 basis-[18rem]">
+        <sub class="text-sm text-neutral-600">Imóvel</sub>
+        <h1 class="text-3xl text-neutral-800 font-medium max-w-xs uppercase">Informações sobre o imóvel:</h1>
+        <p class="text-neutral-800">Area de lazer completa</p>
+        <p class="text-neutral-800">Academia</p>
+      </div>
+
+      <div class="flex flex-row flex-wrap flex-1 gap-4 mt-4">
+        <div
+            class="ring-1 ring-neutral-300 p-4 rounded-md flex flex-1 basis-[200px] flex-col gap-4 flex-wrap justify-between">
+          <p class="text-neutral-800">planta 147m²</p>
+          <p class="text-neutral-800">3 suites</p>
+          <p class="text-neutral-800">2 vagas</p>
+        </div>
+        <div
+            class="ring-1 ring-neutral-300 p-4 rounded-md flex flex-1 basis-[200px] flex-col gap-4 flex-wrap justify-between">
+          <p class="text-neutral-800">planta 147m²</p>
+          <p class="text-neutral-800">3 suites</p>
+          <p class="text-neutral-800">2 vagas</p>
+        </div>
+        <div
+            class="ring-1 ring-neutral-300 p-4 rounded-md flex flex-1 basis-[200px] flex-col gap-4 flex-wrap justify-between">
+          <p class="text-neutral-800">planta 147m²</p>
+          <p class="text-neutral-800">3 suites</p>
+          <p class="text-neutral-800">2 vagas</p>
+        </div>
+        <div
+            class="ring-1 ring-neutral-300 p-4 rounded-md flex flex-1 basis-[200px] flex-col gap-4 flex-wrap justify-between">
+          <p class="text-neutral-800">planta 147m²</p>
+          <p class="text-neutral-800">3 suites</p>
+          <p class="text-neutral-800">2 vagas</p>
+        </div>
+        <div
+            class="ring-1 ring-neutral-300 p-4 rounded-md flex flex-1 basis-[200px] flex-col gap-4 flex-wrap justify-between">
+          <p class="text-neutral-800">planta 147m²</p>
+          <p class="text-neutral-800">3 suites</p>
+          <p class="text-neutral-800">2 vagas</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="flex justify-center mx-auto w-full h-full">
+      <a
+          target="_blank"
+        class="inline-block shadow-2xl w-auto my-10 mx-auto self-center py-2 px-6 ring-1 shadow-2xl ring-neutral-400 font-medium bg-white text-neutral-800 rounded-full hover:bg-neutral-200"
+        href="">Conheça
+      Imovel</a>
+    </div>
+
+    <!--    heading-->
+    <div class="flex flex-row mt-10 flex-wrap justify-between gap-3">
+      <h1 class="text-3xl max-w-xs font-medium text-white">MODERNIDADE E ACONCHEGO EM PERFEITA SINTONIA.</h1>
+      <p class="max-w-md">Com ambientes espaçosos e acabamentos de alta qualidade, esta residência redefine o padrão de
+        luxo. Desfrute de uma vida sofisticada em cada detalhe, onde o conforto se encontra com o design refinado. Seu
+        lar dos sonhos começa aqui.</p>
+    </div>
+
+    <!--    <Faq/>-->
 
     <Footer/>
   </main>
 </template>
 
 <style>
-@media (max-width: 675px){
+@media (max-width: 675px) {
   .collection-big {
     min-height: 200px !important;
   }
@@ -151,4 +149,5 @@
 import Footer from "@/components/Footer.vue";
 import logo from "@/assets/logo.png";
 import Faq from "@/components/Faq.vue";
+import Form from "@/components/Form.vue";
 </script>
