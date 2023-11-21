@@ -105,7 +105,7 @@
             <div class="row text-2xl font-medium text-neutral-800">2 a 6 quartos</div>
           </div>
 
-          <div class="flex flex-row flex-wrap justify-center">
+          <div class="flex flex-row flex-wrap justify-center gap-3">
             <a class="py-2 px-6 ring-1 shadow-2xl ring-neutral-400 font-medium bg-neutral-800 text-white rounded-full hover:bg-neutral-900" href="">Conheça
               Imovel</a>
             <a class="py-2 px-6 font-medium underline underline-offset-8 text-neutral-950" href="">Ligar para um
@@ -116,16 +116,39 @@
 
       <div class="bg-white min-h-[22rem] flex-1 basis-[36rem] m-4 rounded-md shadow-2xl"></div>
     </div>
+
+<!--    heading-->
+    <div class="flex flex-row mt-10 flex-wrap justify-between gap-3">
+      <h1 class="text-3xl max-w-xs font-medium text-white">MODERNIDADE E ACONCHEGO EM PERFEITA SINTONIA.</h1>
+      <p class="max-w-md">Com ambientes espaçosos e acabamentos de alta qualidade, esta residência redefine o padrão de luxo. Desfrute de uma vida sofisticada em cada detalhe, onde o conforto se encontra com o design refinado. Seu lar dos sonhos começa aqui.</p>
+    </div>
+
+    <div class="mt-10">
+      <div class="flex-1 min-h-[400px] collection-big bg-neutral-300 rounded-md shadow-2xl ring-1 ring-neutral-200"></div>
+      <div class="flex flex-row flex-wrap gap-3 mt-3">
+        <div class="flex-1 basis-[18.75rem] min-h-[200px] bg-neutral-300 rounded-md shadow-2xl ring-1 ring-neutral-200"></div>
+        <div class="flex-1 basis-[18.75rem] min-h-[200px] bg-neutral-300 rounded-md shadow-2xl ring-1 ring-neutral-200"></div>
+        <div class="flex-1 basis-[18.75rem] min-h-[200px] bg-neutral-300 rounded-md shadow-2xl ring-1 ring-neutral-200"></div>
+      </div>
+    </div>
+
+<!--    <Faq/>-->
+
     <Footer/>
   </main>
 </template>
 
 <style>
-
+@media (max-width: 675px){
+  .collection-big {
+    min-height: 200px !important;
+  }
+}
 </style>
 
 <script setup>
 
 import Footer from "@/components/Footer.vue";
 import logo from "@/assets/logo.png";
+import Faq from "@/components/Faq.vue";
 </script>

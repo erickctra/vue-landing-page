@@ -88,7 +88,7 @@ import LazyComponent from 'v-lazy-component'
         </form>
       </div>
     </div>
-    <hr class="h-px my-12 bg-neutral-500 border-0">
+    <hr class="h-px my-12 bg-white opacity-10 border-0">
     <div class="flex flex-row items-end justify-between flex-wrap gap-y-3">
       <div class="flex flex-col gap-y-3">
         <sub class="text-sm">Eliana Dantas</sub>
