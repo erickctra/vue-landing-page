@@ -117,19 +117,43 @@
     <div class="flex justify-center mx-auto w-full h-full">
       <a
           target="_blank"
-        class="inline-block shadow-2xl w-auto my-10 mx-auto self-center py-2 px-6 ring-1 shadow-2xl ring-neutral-400 font-medium bg-white text-neutral-800 rounded-full hover:bg-neutral-200"
+        class="inline-block w-auto my-10 mx-auto self-center py-2 px-6 ring-1 shadow-2xl ring-neutral-400 font-medium bg-white text-neutral-800 rounded-full hover:bg-neutral-200"
         href="">Conheça
       Imovel</a>
     </div>
 
     <!--    heading-->
-    <div class="flex flex-row mt-10 flex-wrap justify-between gap-3">
+    <div class="flex flex-row flex-wrap justify-between gap-3">
       <h1 class="text-3xl max-w-xs font-medium text-white">MODERNIDADE E ACONCHEGO EM PERFEITA SINTONIA.</h1>
       <p class="max-w-md">Com ambientes espaçosos e acabamentos de alta qualidade, esta residência redefine o padrão de
         luxo. Desfrute de uma vida sofisticada em cada detalhe, onde o conforto se encontra com o design refinado. Seu
         lar dos sonhos começa aqui.</p>
     </div>
 
+<!--    location-->
+      <div class="flex flex-row mt-20 flex-wrap gap-6 px-4">
+        <div class="flex flex-col basis-44 flex-1 gap-2">
+          <div class="w-12 h-12 bg-neutral-300 rounded-full flex items-center justify-center">icon</div>
+          <div class="max-w-md">
+            <h2 class="text-xl font-medium text-white">ACESSIBILIDADE A TRANSPORTE E POSTOS DE GASOLINA</h2>
+            <p>Este imóvel oferece fácil acesso ao transporte público, economizando tempo e dinheiro em deslocamentos.</p>
+          </div>
+        </div>
+        <div class="flex flex-col basis-44 flex-1 gap-2">
+          <div class="w-12 h-12 bg-neutral-300 rounded-full flex items-center justify-center">icon</div>
+          <div class="max-w-md">
+            <h2 class="text-xl font-medium text-white">PROXIMIDADE A SERVIÇOS E COMODIDADES</h2>
+            <p>Localizado perto de supermercados, escolas e hospitais, tornando a vida mais conveniente.</p>
+          </div>
+        </div>
+        <div class="flex flex-col basis-44 flex-1 gap-2">
+          <div class="w-12 h-12 bg-neutral-300 rounded-full flex items-center justify-center">icon</div>
+          <div class="max-w-md">
+            <h2 class="text-xl font-medium text-white">VALORIZAÇÃO DO IMÓVEL</h2>
+            <p>Uma localização privilegiada pode aumentar o valor da propriedade com o tempo, fazendo dela um sólido investimento.</p>
+          </div>
+        </div>
+      </div>
     <!--    <Faq/>-->
 
     <Footer/>
