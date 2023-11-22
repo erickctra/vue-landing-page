@@ -10,8 +10,6 @@ import LazyImage from "@/components/LazyImage.vue";
 
 <template>
   <main class="max-w-7xl p-8 pb-0 mx-auto main">
-
-
     <div class="mt-12 flex flex-row flex-wrap gap-8 ">
       <div class="flex flex-col gap-y-3 basis-[260px] flex-1 pl-6">
         <div v-if="isLoading" class="h-[40px] w-full bg-neutral-400 opacity-10 animate-pulse"></div>
@@ -55,7 +53,8 @@ import LazyImage from "@/components/LazyImage.vue";
         </div>
       </div>
 
-      <LazyImage :url="houseData.imovel.localizacao"/>
+      <div v-if="isLoading">...</div>
+      <LazyImage v-else :url="houseData.imovel.localizacao"/>
     </div>
 
     <!--    heading-->
@@ -242,7 +241,7 @@ export default {
     }
   },
   created() {
-
+    document.body.setAttribute("data-theme", `${this.$route.params.theme}`)
 
     this.QUERY = gql`
         query Imoveis {
@@ -298,11 +297,7 @@ export default {
             }
           })
           .then(result => {
-
-
             vm.houseData = result.data;
-            console.log(vm.houseData.imovel)
-            console.log(result)
             vm.isLoading = result.data.loading;
           })
           .catch(error => {

@@ -8,7 +8,8 @@ defineProps({
     slug: String,
     metragem: String,
     zonaDoImovel: String,
-    thumbnailImage: String
+    thumbnailImage: String,
+    tema: String
   }
 })
 // min-w-[14rem] w-full max-w-sm h-48 bg-gray-600 bg-[url(https://erickcintra.sirv.com/thumbnails/-small.jpg')] bg-no-repeat bg-cover bg-center rounded-lg shadow-md overflow-hidden
@@ -17,7 +18,7 @@ defineProps({
 
 <template>
   <lazy-component class="flex flex-1 max-w-sm basis-[18rem]" wrapper-tag="section" @intersected="Intersect">
-      <router-link :to="'/casa/' + house.slug">
+      <router-link :to="'/casa/' + house.slug + '/' + house.tema">
 
       <div class="flex flex-col flex-1 gap-2 ">
         <div

@@ -60,6 +60,7 @@ const GET_HOUSES_THUMB = gql`
       id
       slug
       metragem
+      tema
       zonaDoImovel
       thumbnailImage
     }
