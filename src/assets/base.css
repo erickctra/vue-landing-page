@@ -54,6 +54,10 @@ body[data-theme=orange] {
   background-image: url("./bg-sprite-orange.png") !important;
 }
 
+body[data-theme=violet] {
+  background-image: url("./bg-sprite-violet.png") !important;
+}
+
 body {
   min-height: 100vh;
   color: var(--color-text);
@@ -61,11 +65,11 @@ body {
   background-image: url("./bg-sprite-orange.png");
   /*background-repeat: no-repeat;*/
   background-position: center;
-  background-size: 200%;
+  background-size: 500%;
   background-blend-mode: lighten;
 
 
-  transition: background 500ms;
+  /*transition: background 500ms;*/
 
   line-height: 1.6;
   font-family:
@@ -90,6 +94,7 @@ body {
 @media (min-width: 800px) {
   body {
     /*background-repeat: no-repeat;*/
-    background-size: cover;
+    background-size: cover !important;
+
   }
 }

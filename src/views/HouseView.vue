@@ -241,7 +241,7 @@ export default {
     }
   },
   created() {
-    document.body.setAttribute("data-theme", `${this.$route.params.theme}`)
+    // document.body.setAttribute("data-theme", `${this.$route.params.theme}`)
 
     this.QUERY = gql`
         query Imoveis {
