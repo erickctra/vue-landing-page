@@ -5,6 +5,7 @@
 <template>
   <div
       class="p-4 bg-white flex-1 rounded-lg text-neutral-700 flex flex-col gap-y-3 w-full basis-[22rem]  shadow-2xl">
+    <img class="mx-auto" src="@/assets/logo-primary.png" height="60" width="140" alt="...">
     <h1 class="text-3xl font-medium max-w-sm text-center mx-auto">ENCONTRE SEU NOVO ESTILO DE VIDA</h1>
     <p class="max-w-sm text-center mx-auto">Preencha o formulário abaixo para receber todas as informações sobre
       imóveis disponiveis</p>
@@ -73,10 +74,11 @@
       </button>
     </form>
     <small class="mx-auto">ou</small>
-    <button type="button"
-            class="text-[#1A1C18] w-full h-16 py-2 px-6 bg-[#9CD67D] hover:bg-[#80A86A] focus:ring-4 focus:ring-[#B8E2A1] font-medium rounded-lg text-sm">
+    <a target="_blank"
+       href="https://api.whatsapp.com/send?phone=5511996048780&text=Ol%C3%A1%2C%20gostaria%20de%20falar%20sobre%20um%20dos%20imoveis%20em%20seu%20site"
+       class="text-[#1A1C18] text-center flex items-center justify-center w-full h-16 py-2 px-6 bg-[#9CD67D] hover:bg-[#80A86A] focus:ring-4 focus:ring-[#B8E2A1] font-medium rounded-lg text-sm">
       Contato por WhatsApp
-    </button>
+    </a>
   </div>
 </template>
 <style scoped>
