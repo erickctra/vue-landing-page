@@ -77,6 +77,8 @@ export default {
     }
   },
   created() {
+    document.body.setAttribute("data-theme", "dark")
+
     const vm = this
     vm.getHousesList({character: '@'})
   },

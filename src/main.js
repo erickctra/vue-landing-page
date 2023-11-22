@@ -7,9 +7,14 @@ import router from './router'
 import { createApolloProvider } from '@vue/apollo-option'
 import { apolloClient } from './lib/apollo'
 
+if (history.scrollRestoration) {
+    history.scrollRestoration = 'manual';
+}
+
 const apolloProvider = createApolloProvider({
     defaultClient: apolloClient,
 })
+
 
 const app = createApp(App)
 
