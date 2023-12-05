@@ -47,25 +47,31 @@ html {
 }
 
 body[data-theme=dark] {
-  background-image: url("./bg-sprite.png") !important;
+  /*background-image: url("./bg-sprite.png") !important;*/
+  background: #171717;
+
 }
 
 body[data-theme=orange] {
-  background-image: url("./bg-sprite-orange.png") !important;
+  background-color: #f97316;
 }
 
 body[data-theme=violet] {
-  background-image: url("./bg-sprite-violet.png") !important;
+  background-color: #8b5cf6;
+}
+
+body[data-theme=purple] {
+  background-color: #11101D;
 }
 
 body {
   min-height: 100vh;
   color: var(--color-text);
   background: #171717;
-  background-image: url("./bg-sprite.png");
+  /*background-image: url("./bg-sprite.png");*/
   /*background-repeat: no-repeat;*/
   background-position: center;
-  background-size: 500%;
+  background-size: 100% 500%;
   background-blend-mode: lighten;
 
 

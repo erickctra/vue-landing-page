@@ -9,11 +9,11 @@ import LazyComponent from "v-lazy-component";
 <template>
   <main class="max-w-7xl p-8 pb-0 mx-auto main relative">
 
-    <a
-        class="w-14 h-14 bg-[#9CD67D] flex items-center justify-center fixed bottom-4 right-6 rounded-full shadow-2xl"
-        target="_blank"
+    <a aria-label="Entrar em contato pelo whatsapp"
+       class="w-14 h-14 bg-[#9CD67D] flex items-center justify-center fixed bottom-4 right-6 rounded-full shadow-2xl"
+       target="_blank"
 
-        href="https://api.whatsapp.com/send?phone=5511996048780&text=Ol%C3%A1%2C%20gostaria%20de%20falar%20sobre%20um%20dos%20imoveis%20em%20seu%20site">
+       href="https://api.whatsapp.com/send?phone=5511996048780&text=Ol%C3%A1%2C%20gostaria%20de%20falar%20sobre%20um%20dos%20imoveis%20em%20seu%20site">
       <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23" fill="none">
         <path fill-rule="evenodd" clip-rule="evenodd"
               d="M16.7691 13.7829C16.483 13.6404 15.0761 12.9515 14.8139 12.8564C14.5516 12.7614 14.3608 12.7139 14.1701 12.9989C13.9793 13.2839 13.4309 13.9254 13.264 14.1155C13.0971 14.3056 12.9302 14.3294 12.644 14.1868C12.3579 14.0443 11.4359 13.7436 10.343 12.7733C9.49235 12.0182 8.91805 11.0857 8.75118 10.8006C8.58422 10.5155 8.73331 10.3614 8.87658 10.2194C9.00536 10.0918 9.1628 9.88677 9.30583 9.72045C9.4489 9.55421 9.49659 9.43535 9.59197 9.24542C9.68735 9.05529 9.63966 8.88905 9.56809 8.74654C9.49659 8.60399 8.92431 7.20223 8.68586 6.63199C8.45359 6.07675 8.2177 6.15196 8.04205 6.14315C7.87534 6.13491 7.68438 6.13315 7.49366 6.13315C7.3029 6.13315 6.99287 6.20442 6.73054 6.48944C6.46832 6.77454 5.72909 7.46355 5.72909 8.86515C5.72909 10.267 6.75438 11.621 6.89749 11.8111C7.0406 12.0012 8.91517 14.8776 11.7857 16.1111C12.4684 16.4045 13.0013 16.5797 13.4169 16.7109C14.1024 16.9277 14.7261 16.8971 15.2192 16.8238C15.769 16.7421 16.9122 16.1349 17.1506 15.4698C17.3891 14.8044 17.3891 14.2343 17.3175 14.1155C17.246 13.9967 17.0552 13.9254 16.7691 13.7829ZM11.5481 20.8776H11.5443C9.83627 20.8769 8.16107 20.4202 6.69965 19.5572L6.35206 19.3518L2.74958 20.2923L3.71112 16.7967L3.48486 16.4383C2.53205 14.9301 2.0288 13.187 2.02954 11.397C2.03164 6.17413 6.30162 1.92491 11.5519 1.92491C14.0943 1.92581 16.4841 2.91243 18.2813 4.70302C20.0783 6.4935 21.0674 8.87351 21.0664 11.4046C21.0643 16.628 16.7944 20.8776 11.5481 20.8776ZM19.6489 3.34241C17.4868 1.18814 14.6115 0.00122958 11.548 0C5.23584 0 0.0985097 5.11243 0.0959564 11.3963C0.0951327 13.4051 0.62244 15.3657 1.62459 17.0941L0 23L6.07079 21.4152C7.74351 22.3231 9.62677 22.8017 11.5434 22.8023H11.5482C17.8596 22.8023 22.9974 17.6894 23 11.4054C23.0012 8.36012 21.811 5.49663 19.6489 3.34241Z"
@@ -21,19 +21,14 @@ import LazyComponent from "v-lazy-component";
       </svg>
     </a>
 
-    <router-link class="py-2 px-6 h-14 bg-white text-neutral-800 font-medium flex items-center justify-center fixed bottom-4 right-24 rounded-full shadow-2xl" to="/">Ver outros imóveis</router-link>
 
-    <LazyImage :url="houseData.imovel.foto1"/>
-    <div class="flex justify-center mx-auto w-full h-full">
-      <a
-          target="_blank"
-          class="inline-block w-auto my-10 mx-auto self-center py-2 px-6 ring-1 shadow-2xl ring-neutral-400 font-medium bg-white text-neutral-800 rounded-full hover:bg-neutral-200"
-          href="https://api.whatsapp.com/send?phone=5511996048780&text=Ol%C3%A1%2C%20gostaria%20de%20falar%20sobre%20um%20dos%20imoveis%20em%20seu%20site">Conheça
-        Imovel</a>
-    </div>
+    <router-link
+        class="py-2 px-6 h-14 bg-white text-neutral-800 font-medium flex items-center justify-center fixed bottom-4 right-24 rounded-full shadow-2xl"
+        to="/">Ver outros imóveis
+    </router-link>
 
-    <div class="flex flex-row flex-wrap gap-8 ">
-      <div class="flex flex-col gap-y-3 basis-[260px] flex-1 pl-6">
+    <div class="flex flex-row flex-wrap gap-x-16 gap-8 ">
+      <div class="flex flex-col gap-y-3 basis-[260px] flex-1">
         <div v-if="isLoading" class="h-[40px] w-full bg-neutral-400 opacity-10 animate-pulse"></div>
         <sub v-else class="text-sm">{{ houseData.imovel.zonaDoImovel }}</sub>
         <div v-if="isLoading" class="h-[120px] w-full bg-neutral-400 opacity-10 animate-pulse"></div>
@@ -41,6 +36,23 @@ import LazyComponent from "v-lazy-component";
         <p>CRECISP - 254502-F</p>
         <div v-if="isLoading" class="h-[220px] w-full bg-neutral-400 opacity-10 animate-pulse"></div>
         <p v-else class="max-w-sm text-sm">{{ houseData.imovel.descricao }}</p>
+
+        <div v-if="isLoading" :style="`background-image:url(${houseData.imovel.thumbnailImage.replace('.jpg','-small.jpg')})`" class="block bg-cover bg-center rounded-md bg-no-repeat w-full min-h-[400px] h-1/3 bg-white opacity-40">
+        </div>
+
+        <div v-else class="block w-full min-h-[12rem] bg-white overflow-hidden rounded-md ring-1 ring-neutral-200">
+          <img height="600" class="w-full h-full object-cover object-center" :src="houseData.imovel.foto3" alt="..." @load="firstImg = false"/>
+        </div>
+
+        <div class="flex justify-center mx-auto w-full">
+          <a
+              target="_blank"
+              class="inline-block w-auto mx-auto self-center py-2 px-6 ring-1 shadow-2xl ring-neutral-400 font-medium bg-white text-neutral-800 rounded-full hover:bg-neutral-200"
+              href="https://api.whatsapp.com/send?phone=5511996048780&text=Ol%C3%A1%2C%20gostaria%20de%20falar%20sobre%20um%20dos%20imoveis%20em%20seu%20site">Conheça
+            Imovel</a>
+        </div>
+
+
       </div>
       <Form/>
     </div>
@@ -54,12 +66,12 @@ import LazyComponent from "v-lazy-component";
         <div class=" gap-3   flex flex-row flex-wrap justify-between p-4 flex-1 basis-[20rem] ">
           <div class="max-w-sm flex flex-col gap-3">
             <sub class="text-sm text-neutral-600">Eliana Dantas</sub>
-            <h1 class="text-3xl text-neutral-800 font-medium max-w-md uppercase">Seu próximo capítulo começa aqui.</h1>
+            <h1 class="text-3xl text-neutral-800 font-medium max-w-sm uppercase">Seu próximo capítulo começa aqui.</h1>
             <p class="text-neutral-600">"Nossos imóveis oferecem o conforto que você merece, independentemente do espaço
               que você procura, para atender a todas as suas necessidades."</p>
           </div>
 
-          <div class="mx-auto min-h-[150px] flex-1 flex flex-col justify-around basis-80 max-w-[300px]">
+          <div class="mx-auto min-h-[80px] flex-1 flex flex-col justify-around basis-80 max-w-[300px]">
             <div class="mx-auto">
               <div v-if="isLoading" class="h-[120px] w-full bg-neutral-400 opacity-10 animate-pulse"></div>
               <div v-else class="row text-2xl font-medium text-neutral-800 flex flex-row items-center gap-3">
@@ -102,11 +114,11 @@ import LazyComponent from "v-lazy-component";
     <lazy-component wrapper-tag="section" @intersected="() => { onScreen.headlineTwo = true; }">
       <div v-show="onScreen.headlineTwo" class="flex flex-row mt-10 flex-wrap justify-between gap-3">
         <div v-if="isLoading" class="h-[120px] w-full bg-neutral-400 opacity-10 animate-pulse"></div>
-        <h1 v-else class="text-3xl max-w-xs font-medium text-white">{{ houseData.imovel.headline2 }}</h1>
+        <h1 v-else class="text-3xl max-w-sm font-medium text-white">{{ houseData.imovel.headline2 }}</h1>
 
         <div v-if="isLoading" class="h-[120px] w-full bg-neutral-400 opacity-10 animate-pulse"></div>
 
-        <p v-else class="max-w-md">{{ houseData.imovel.descricao2 }}</p>
+        <p v-else class="max-w-xs">{{ houseData.imovel.descricao2 }}</p>
       </div>
     </lazy-component>
 
@@ -119,7 +131,7 @@ import LazyComponent from "v-lazy-component";
         </div>
         <div class="flex flex-row flex-wrap gap-3 mt-3">
           <div
-              class="flex-1 basis-[18.75rem] min-h-[120px] bg-neutral-300 rounded-md shadow-2xl ring-1 ring-neutral-200"
+              class="flex-1 basis-[18.75rem] min-h-[80px] bg-neutral-300 rounded-md shadow-2xl ring-1 ring-neutral-200"
               v-for="img in houseData.imovel.collectionOne"
           >
             <LazyImage :url="img"/>
@@ -198,8 +210,8 @@ import LazyComponent from "v-lazy-component";
 
     <!--    heading-->
     <div class="flex flex-row flex-wrap justify-between gap-3">
-      <h1 class="text-3xl max-w-xs font-medium text-white uppercase">SUA MOBILIDADE É IMPORTANTE PARA NÓS.</h1>
-      <p class="max-w-md">Este imóvel exclusivo combina acesso conveniente a centros urbanos, serviços e natureza,
+      <h1 class="text-3xl max-w-sm font-medium text-white uppercase">SUA MOBILIDADE É IMPORTANTE PARA NÓS.</h1>
+      <p class="max-w-xs">Este imóvel exclusivo combina acesso conveniente a centros urbanos, serviços e natureza,
         proporcionando o equilíbrio perfeito entre comodidade e serenidade. Sua localização estratégica redefine a
         praticidade, tornando-o não apenas uma propriedade, mas um estilo de vida desejado.</p>
     </div>
@@ -249,15 +261,15 @@ import LazyComponent from "v-lazy-component";
     </div>
 
     <div class="mt-10">
-      <div class="flex-1 min-h-[150px] collection-big bg-neutral-300 rounded-md shadow-2xl ring-1 ring-neutral-200">
+      <div class="flex-1 min-h-[80px] collection-big bg-neutral-300 rounded-md shadow-2xl ring-1 ring-neutral-200">
         <LazyImage :url="houseData.imovel.localizacao"/>
       </div>
     </div>
 
     <!--    heading-->
     <div class="flex flex-row flex-wrap justify-between mt-10 gap-3">
-      <h1 class="text-3xl max-w-xs font-medium text-white uppercase">Plantas <br> disponíveis:</h1>
-      <p class="max-w-md">As plantas do imóvel exibem uma qualidade excepcional, integrando-se de forma elegante ao
+      <h1 class="text-3xl max-w-sm font-medium text-white uppercase">Plantas <br> disponíveis:</h1>
+      <p class="max-w-xs">As plantas do imóvel exibem uma qualidade excepcional, integrando-se de forma elegante ao
         design, proporcionando não apenas beleza, mas também um conforto visual notável. Cada detalhe verde foi
         cuidadosamente escolhido, conferindo ao espaço uma atmosfera acolhedora e harmoniosa.</p>
     </div>
@@ -267,7 +279,7 @@ import LazyComponent from "v-lazy-component";
     <lazy-component wrapper-tag="section" @intersected="() => { onScreen.houseMaps = true; }">
       <div class="mt-10 flex flex-col gap-3">
         <div v-show="onScreen.houseMaps" v-for="house in houseData.imovel.planta"
-             class="flex-1 min-h-[150px] collection-big bg-neutral-300 rounded-md shadow-2xl ring-1 ring-neutral-200">
+             class="flex-1 min-h-[80px] collection-big bg-neutral-300 rounded-md shadow-2xl ring-1 ring-neutral-200">
           <LazyImage :url="house"/>
         </div>
       </div>
@@ -285,7 +297,7 @@ import LazyComponent from "v-lazy-component";
     <lazy-component wrapper-tag="section" @intersected="() => { onScreen.otherPhotos = true; }">
       <div class="mt-10 flex flex-col gap-3">
         <div v-show="onScreen.otherPhotos" v-for="img in houseData.imovel.demaisFotos"
-             class="flex-1 min-h-[150px] collection-big bg-neutral-300 rounded-md shadow-2xl ring-1 ring-neutral-200">
+             class="flex-1 min-h-[80px] collection-big bg-neutral-300 rounded-md shadow-2xl ring-1 ring-neutral-200">
           <LazyImage :url="img"/>
         </div>
       </div>
@@ -307,6 +319,7 @@ export default {
       QUERY: null,
       houseData: {},
       isLoading: false,
+      firstImg: false,
 
       onScreen: {
         infoOne: false,
@@ -326,6 +339,7 @@ export default {
             academia
             areaLazer
             collectionOne
+            thumbnailImage
             demaisFotos
             descricao
             descricao2
@@ -375,7 +389,8 @@ export default {
           })
           .then(result => {
             vm.houseData = result.data;
-            vm.isLoading = result.data.loading;
+
+            vm.isLoading = false;
           })
           .catch(error => {
             console.log(error)

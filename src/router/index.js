@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
 
+const Home = () => import('@/views/HomeView.vue')
 const House = () => import('@/views/HouseView.vue')
 
 const router = createRouter({
@@ -9,7 +9,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: Home
     },
     {
       path: '/casa/:slug/:theme',
