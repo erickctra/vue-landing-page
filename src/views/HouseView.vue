@@ -9,7 +9,7 @@ import LazyComponent from "v-lazy-component";
 <template>
     <img class="mx-auto py-8 " src="@/assets/logo-primary.png" height="60" width="140" alt="...">
 
-  <main class="max-w-7xl pb-0 mx-auto main relative">
+  <main class="max-w-7xl px-8 pb-0 mx-auto main relative">
 
     <a aria-label="Entrar em contato pelo whatsapp"
        class="w-14 h-14 bg-[#9CD67D] flex items-center justify-center fixed bottom-4 right-6 rounded-full shadow-2xl"
