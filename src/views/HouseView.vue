@@ -7,7 +7,9 @@ import LazyComponent from "v-lazy-component";
 </script>
 
 <template>
-  <main class="max-w-7xl p-8 pb-0 mx-auto main relative">
+    <img class="mx-auto py-8 " src="@/assets/logo-primary.png" height="60" width="140" alt="...">
+
+  <main class="max-w-7xl pb-0 mx-auto main relative">
 
     <a aria-label="Entrar em contato pelo whatsapp"
        class="w-14 h-14 bg-[#9CD67D] flex items-center justify-center fixed bottom-4 right-6 rounded-full shadow-2xl"
@@ -24,10 +26,10 @@ import LazyComponent from "v-lazy-component";
 
     <router-link
         class="py-2 px-6 h-14 bg-white text-neutral-800 font-medium flex items-center justify-center fixed bottom-4 right-24 rounded-full shadow-2xl"
-        to="/">Ver outros imóveis
+        to="/#home">Ver outros imóveis
     </router-link>
 
-    <div class="flex flex-row flex-wrap gap-x-16 gap-8 ">
+    <div id="home" class="flex flex-row flex-wrap gap-x-16 gap-8 ">
       <div class="flex flex-col gap-y-3 basis-[260px] flex-1">
         <div v-if="isLoading" class="h-[40px] w-full bg-neutral-400 opacity-10 animate-pulse"></div>
         <sub v-else class="text-sm">{{ houseData.imovel.zonaDoImovel }}</sub>

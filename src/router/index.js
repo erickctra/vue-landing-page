@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 const Home = () => import('@/views/HomeView.vue')
+const Ok = () => import('@/views/http/ok.vue')
 const House = () => import('@/views/HouseView.vue')
 
 const router = createRouter({
@@ -10,6 +11,11 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: Home
+    },
+    {
+      path: '/ok',
+      name: 'SuccessfulEmail',
+      component: Ok
     },
     {
       path: '/casa/:slug/:theme',

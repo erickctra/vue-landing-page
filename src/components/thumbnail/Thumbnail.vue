@@ -30,7 +30,7 @@ defineProps({
         <div class="flex flex-row gap-3 text-gray-200">
           <p>{{ house.slug }}</p>
           <span
-              class="inline-flex items-center rounded-md bg-neutral-400 bg-opacity-10 px-2 py-1 text-xs font-medium text-gray-200 ring-1 ring-inset ring-gray-500/10">{{
+              class="inline-flex items-center rounded-md bg-pink-200 bg-opacity-10 px-2 py-1 text-xs font-medium text-[#FEEDEB] ring-1 ring-inset ring-gray-500/10">{{
               house.zonaDoImovel
             }}</span>
         </div>
